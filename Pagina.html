@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <title>My web 2000s</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="container">
+
+  <h1 class="blink">WELCOME TO MY WEB!</h1>
+
+  <marquee>Personal web created by me and my great friend ChatGTP to make it like a 2000's web style</marquee>
+
+  <div class="content">
+
+    <div class="left">
+      <img src="avatar.gif" class="avatar">
+      <p>Hi!</p>
+
+      <h4>Guestbook</h4>
+      <input id="name" placeholder="Name"><br>
+      <textarea id="msg" placeholder="Message"></textarea><br>
+      <button onclick="add()">Add</button>
+
+      <div id="entries"></div>
+    </div>
+
+    <div class="right">
+      <h2>My GIF's</h2>
+
+      <img src="banner.gif" class="banner">
+      <img src="neon.gif" class="banner">
+
+      <h2>Music</h2>
+      <audio controls autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+  </div>
+
+  <footer>
+    Visitor counter: 000001
+  </footer>
+
+</div>
+
+<script>
+function add() {
+  let name = document.getElementById("name").value;
+  let msg = document.getElementById("msg").value;
+
+  if(!name || !msg) return alert("Do it all pls!");
+
+  let box = document.createElement("div");
+  box.className = "entry";
+  box.innerHTML = "<b>"+name+"</b>: "+msg;
+
+  document.getElementById("entries").prepend(box);
+}
+</script>
+
+</body>
+</html>
